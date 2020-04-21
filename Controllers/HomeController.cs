@@ -16,15 +16,18 @@ namespace SurveyMVC.Controllers
             return View();
         }
         [HttpPost("result")]
-        public IActionResult Result(Survey survey)
+        public IActionResult Result(string Name, string Location, string Language, string Comment)
         {
             if(ModelState.IsValid)
             {
-                ViewBag.Name = survey.Name;
-                ViewBag.Location = survey.Location;
-                ViewBag.Language = survey.Language;
-                ViewBag.Comment = survey.Comment;
-                return View("Success");
+                Survey survey = new Survey()
+                {
+                    Name = Name,
+                    Location = Location,
+                    Language = Language,
+                    Comment = Comment,
+                };
+                return View("Success", survey);
             }
             else
             {
