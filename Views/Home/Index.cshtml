@@ -1,0 +1,30 @@
+﻿@using SurveyMVC.Models
+@model Survey
+
+<div>
+    <form asp-action="Result" asp-controller="Home" method="POST">
+        <span asp-validation-for="Name"></span><br>
+        <label asp-for="Name"></label><br>
+        <input asp-for="Name"><br>
+        <span asp-validation-for="Location"></span><br>
+        <label asp-for="Location"></label><br>
+        <select asp-for="Location">
+            <option></option>
+            <option value="San Jose">San Jose</option>
+            <option value="Seattle">Seattle</option>
+            <option value="Chicago">Chicago</option>
+        </select><br>
+        <span asp-validation-for="Language"></span><br>
+        <label asp-for="Language"></label><br>
+        <select asp-for="Language">
+            <option></option>
+            <option value="Python">Python</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="C#">C#</option>
+        </select><br>
+        <span asp-validation-for="Comment"></span><br>
+        <label asp-for="Comment"></label><br>
+        <input asp-for="Comment"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
